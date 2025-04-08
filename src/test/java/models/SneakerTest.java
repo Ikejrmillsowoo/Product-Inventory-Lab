@@ -46,27 +46,27 @@ public class SneakerTest {
     @Test
     public void setBrandTest(){
         //given(1)
-        float expected = 2;
+        String expected = "Nike";
 
         //When (2)
         Sneaker testSneaker = new Sneaker();
-        testSneaker.setPrice(expected);
+        testSneaker.setBrand(expected);
 
         //Then (3)
-        Assertions.assertEquals(expected, testSneaker.getPrice());
+        Assertions.assertEquals(expected, testSneaker.getBrand());
     }
 
     @Test
     public void setSportTest(){
         //given(1)
-        float expected = 2;
+        String expected = "Basket Ball";
 
         //When (2)
         Sneaker testSneaker = new Sneaker();
-        testSneaker.setPrice(expected);
+        testSneaker.setSport(expected);
 
         //Then (3)
-        Assertions.assertEquals(expected, testSneaker.getPrice());
+        Assertions.assertEquals(expected, testSneaker.getSport());
     }
 
     @Test
@@ -76,10 +76,10 @@ public class SneakerTest {
 
         //When (2)
         Sneaker testSneaker = new Sneaker();
-        testSneaker.setPrice(expected);
+        testSneaker.setSize(expected);
 
         //Then (3)
-        Assertions.assertEquals(expected, testSneaker.getPrice());
+        Assertions.assertEquals(expected, testSneaker.getSize());
     }
 
     @Test
@@ -89,9 +89,34 @@ public class SneakerTest {
 
         //When (2)
         Sneaker testSneaker = new Sneaker();
-        testSneaker.setPrice(expected);
+        testSneaker.setQty(expected);
 
         //Then (3)
-        Assertions.assertEquals(expected, testSneaker.getPrice());
+        Assertions.assertEquals(expected, testSneaker.getQty());
+    }
+
+
+    @Test
+    public void constructorTest() {
+        //given
+        int expectedId = 6;
+        String expectedName = "Stan Smith";
+        String expectedBrand = "Adidas";
+        String expectedSport = "Tennis";
+        int expectedSize = 2;
+        int expectedQty = 10;
+        float expectedPrice = 80.00f;
+
+        //When
+        Sneaker sneaker = new Sneaker(expectedId, expectedName, expectedBrand, expectedSport, expectedSize, expectedQty, expectedPrice );
+
+        //Then
+        Assertions.assertEquals(expectedId, sneaker.getId());
+        Assertions.assertEquals(expectedName, sneaker.getName());
+        Assertions.assertEquals(expectedBrand, sneaker.getBrand());
+        Assertions.assertEquals(expectedSize, sneaker.getSize());
+        Assertions.assertEquals(expectedSport, sneaker.getSport());
+        Assertions.assertEquals(expectedQty, sneaker.getQty());
+        Assertions.assertEquals(expectedPrice, sneaker.getPrice());
     }
 }
