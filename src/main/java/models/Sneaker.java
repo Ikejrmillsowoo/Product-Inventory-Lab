@@ -37,7 +37,7 @@ public class Sneaker {
         this.price = price;
     }
 
-    public double getPrice() {
+    public float getPrice() {
         return this.price;
     }
 
