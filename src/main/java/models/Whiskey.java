@@ -4,7 +4,7 @@ public class Whiskey {
     private int id;
     private String name;
     private String brand;
-    private int size;
+    private String size;
     private int qty;
     private float price;
 
@@ -12,7 +12,7 @@ public Whiskey(){
 
 }
 
-    public Whiskey(int id, String name, String brand, int size, int qty, float price) {
+    public Whiskey(int id, String name, String brand, String size, int qty, float price) {
         this.id = id;
         this.name = name;
         this.brand = brand;
@@ -33,7 +33,7 @@ public Whiskey(){
         return this.brand;
     }
 
-    public int getSize() {
+    public String getSize() {
         return this.size;
     }
 
@@ -49,7 +49,7 @@ public Whiskey(){
         this.qty = qty;
     }
 
-    public void setSize(int size) {
+    public void setSize(String size) {
         this.size = size;
     }
 

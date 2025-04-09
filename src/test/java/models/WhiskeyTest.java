@@ -61,7 +61,7 @@ public class WhiskeyTest {
     @Test
     public void setSizeTest() {
         //given(1)
-        int expected = 4;
+        String expected = "lg";
 
         //When (2)
         Whiskey testWhiskey = new Whiskey();
@@ -92,7 +92,7 @@ public class WhiskeyTest {
         String expectedName = "Stan Smith";
         String expectedBrand = "Adidas";
         String expectedSport = "Tennis";
-        int expectedSize = 2;
+        String expectedSize = "xl";
         int expectedQty = 10;
         float expectedPrice = 80.00f;
 

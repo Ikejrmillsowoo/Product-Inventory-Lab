@@ -2,9 +2,12 @@ package services;
 
 import models.Sneaker;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class SneakerServiceTest {
+
+
     @Test
     public void createTest(){
         //Given
@@ -35,10 +38,13 @@ public class SneakerServiceTest {
         Assertions.assertEquals(expectedSport, actualSport);
         Assertions.assertEquals(expectedSize, actualSize);
         Assertions.assertEquals(expectedQty, actualQty);
+
+
     }
 
     @Test
     public void findSneakerByIdTest(){
+
         //given
         String expectedName = "Air Forces";
         String expectedBrand = "Nike";
@@ -52,11 +58,12 @@ public class SneakerServiceTest {
         Sneaker testSneaker = sneakerService.create(expectedName, expectedBrand, expectedSport, expectedSize, expectedQty, expectedPrice);
 
         //Then
-        Sneaker actualSneaker = sneakerService.findSneakerById(1);
+        Sneaker actualSneaker = sneakerService.findSneakerById(testSneaker.getId());
 
         System.out.println(actualSneaker.getName());
 
         Assertions.assertEquals(testSneaker.getName(), actualSneaker.getName());
+
     }
 
     @Test
@@ -76,18 +83,22 @@ public class SneakerServiceTest {
 
     @Test
     public void deleteTest(){
+
         //given
         SneakerService sneakerService = new SneakerService();
-
+        sneakerService.getInventory().clear();
+        System.out.println(sneakerService.findAll().length);
         //when
         Sneaker testSneaker = sneakerService.create("Air Forces", "Nike", "Tennis", 12, 8, 70.00f);
         Sneaker testSneaker2 = sneakerService.create("Stan Smith", "Adidas", "Tennis", 12, 10, 80.00f);
-        int idToDelete = 1;
+        int idToDelete = testSneaker.getId();
         int actualNumOfSneakers = 1;
 
+        System.out.println(sneakerService.findAll().length);
 
         //Then
-        Assertions.assertTrue(sneakerService.delete(1));
+        Assertions.assertTrue(sneakerService.delete(idToDelete));
+        System.out.println(sneakerService.findAll().length);
         Assertions.assertEquals(sneakerService.findAll().length, actualNumOfSneakers);
     }
 }

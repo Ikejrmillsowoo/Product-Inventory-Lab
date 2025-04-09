@@ -3,7 +3,6 @@ package services;
 import models.Sneaker;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class SneakerService {
@@ -35,6 +34,14 @@ public class SneakerService {
     }
 
     public boolean delete(int id){
-       return inventory.remove(findSneakerById(id));
+        if (inventory == null || inventory.isEmpty()){
+            return false;
+        }
+
+        return inventory.remove(findSneakerById(id));
+    }
+
+    public List<Sneaker> getInventory() {
+        return inventory;
     }
 }
