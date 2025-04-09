@@ -48,6 +48,7 @@ public class SneakerService {
         return inventory;
     }
 
+
     public void addToCSV() throws IOException {
         String csvFile = "/Users/batman/Desktop/Sneaker.csv";
         FileWriter writer = new FileWriter(csvFile);
