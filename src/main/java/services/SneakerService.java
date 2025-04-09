@@ -3,6 +3,7 @@ package services;
 import models.Sneaker;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SneakerService {
@@ -15,5 +16,25 @@ public class SneakerService {
         inventory.add(createdSneaker);
 
         return createdSneaker;
+    }
+
+    public Sneaker findSneakerById(int id) {
+        if (inventory == null || inventory.isEmpty()){
+            return null;
+        }
+        for(Sneaker sneaker: inventory){
+           if(sneaker !=null && sneaker.getId() == id){
+               return sneaker;
+           };
+        }
+        return null;
+    }
+
+    public Sneaker[] findAll(){
+        return inventory.toArray(new Sneaker[0]);
+    }
+
+    public boolean delete(int id){
+       return inventory.remove(findSneakerById(id));
     }
 }
