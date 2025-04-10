@@ -1,12 +1,15 @@
 package models;
 
+import lombok.Getter;
+
+@Getter
 public class Whiskey extends Product {
-    private int id;
-    private String name;
-    private String brand;
-    private int size;
-    private int qty;
-    private float price;
+//    private int id;
+//    private String name;
+//    private String brand;
+//    private int size;
+//    private int qty;
+//    private float price;
 
     //can move shared variables to product
 
@@ -21,30 +24,6 @@ public Whiskey(){
         this.size = size;
         this.qty = qty;
         this.price = price;
-    }
-
-    public int getId() {
-        return this.id;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public String getBrand() {
-        return this.brand;
-    }
-
-    public int getSize() {
-        return this.size;
-    }
-
-    public int getQty() {
-        return this.qty;
-    }
-
-    public float getPrice() {
-        return this.price;
     }
 
     public void setQty(int qty) {

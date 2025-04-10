@@ -1,0 +1,17 @@
+[ {
+  "id" : 1,
+  "name" : "Scotch Whiskey",
+  "brand" : "them peoples",
+  "sport" : null,
+  "size" : 7,
+  "qty" : 12,
+  "price" : 70.0
+}, {
+  "id" : 2,
+  "name" : "Blended ",
+  "brand" : "Whiskey",
+  "sport" : null,
+  "size" : 6,
+  "qty" : 12,
+  "price" : 80.0
+} ]

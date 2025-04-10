@@ -1,17 +1,20 @@
 package services;
 
+import models.Product;
 import models.Sneaker;
 import models.Whiskey;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+
 public class WhiskeyServiceTest {
     @Test
-    public void createTest(){
+    public void createTest() throws IOException {
         //Given
-        String expectedName = "Stan Smith";
-        String expectedBrand = "Adidas";
-        int expectedSize = 7;
+        String expectedName = "Rye Whiskey";
+        String expectedBrand = "Whiskey";
+        int expectedSize = 10;
         int expectedQty = 10;
         float expectedPrice = 80.00f;
 
@@ -36,10 +39,10 @@ public class WhiskeyServiceTest {
     }
 
     @Test
-    public void findWhiskeyByIdTest(){
+    public void findWhiskeyByIdTest() throws IOException {
         //given
-        String expectedName = "Air Forces";
-        String expectedBrand = "Nike";
+        String expectedName = "Bourbon";
+        String expectedBrand = "Whiskey";
         int expectedSize = 7;
         int expectedQty = 8;
         float expectedPrice = 70.00f;
@@ -49,19 +52,19 @@ public class WhiskeyServiceTest {
         Whiskey testWhiskey = whiskeyService.create(expectedName, expectedBrand, expectedSize, expectedQty, expectedPrice);
 
         //Then
-        Whiskey actualWhiskey = whiskeyService.findWhiskeyById(testWhiskey.getId());
+        Product actualWhiskey = whiskeyService.findWhiskeyById(testWhiskey.getId());
         Assertions.assertEquals(testWhiskey.getName(), actualWhiskey.getName());
     }
 
     @Test
 
-    public void findAllTest(){
+    public void findAllTest() throws IOException {
         //given
         WhiskeyService whiskeyService = new WhiskeyService();
 
         //when
-        Whiskey testWhiskey = whiskeyService.create("Air Forces", "Nike", 7, 12, 70.00f);
-        Whiskey testWhiskey2 = whiskeyService.create("Stan Smith", "Adidas", 6, 12, 80.00f);
+        Whiskey testWhiskey = whiskeyService.create("Japanese", "Japan", 7, 12, 70.00f);
+        Whiskey testWhiskey2 = whiskeyService.create("Irish", "Ireland", 6, 12, 80.00f);
         int actualNumOfSneakers = 2;
 
 
@@ -70,12 +73,12 @@ public class WhiskeyServiceTest {
     }
 
     @Test
-    public void deleteTest(){
+    public void deleteTest() throws IOException {
         //given
         WhiskeyService whiskeyService = new WhiskeyService();
         //when
-        Whiskey testWhiskey = whiskeyService.create("Air Forces", "Nike", 7, 12, 70.00f);
-        Whiskey testWhiskey2 = whiskeyService.create("Stan Smith", "Adidas", 6, 12, 80.00f);
+        Whiskey testWhiskey = whiskeyService.create("Scotch Whiskey", "them peoples", 7, 12, 70.00f);
+        Whiskey testWhiskey2 = whiskeyService.create("Blended ", "Whiskey", 6, 12, 80.00f);
         int idToDelete = testWhiskey.getId();
         int actualNumOfWhiskey = 1;
 
