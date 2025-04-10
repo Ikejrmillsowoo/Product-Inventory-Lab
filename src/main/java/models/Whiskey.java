@@ -1,18 +1,20 @@
 package models;
 
-public class Whiskey {
+public class Whiskey extends Product {
     private int id;
     private String name;
     private String brand;
-    private String size;
+    private int size;
     private int qty;
     private float price;
+
+    //can move shared variables to product
 
 public Whiskey(){
 
 }
 
-    public Whiskey(int id, String name, String brand, String size, int qty, float price) {
+    public Whiskey(int id, String name, String brand, int size, int qty, float price) {
         this.id = id;
         this.name = name;
         this.brand = brand;
@@ -33,7 +35,7 @@ public Whiskey(){
         return this.brand;
     }
 
-    public String getSize() {
+    public int getSize() {
         return this.size;
     }
 
@@ -49,7 +51,7 @@ public Whiskey(){
         this.qty = qty;
     }
 
-    public void setSize(String size) {
+    public void setSize(int size) {
         this.size = size;
     }
 

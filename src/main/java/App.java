@@ -1,9 +1,14 @@
 import io.Console;
+import lombok.Getter;
+import lombok.Setter;
 import services.SneakerService;
 import services.WhiskeyService;
 
 public class App {
+    @Setter
     private SneakerService sneakerService = new SneakerService();
+    @Setter
+    @Getter
     private WhiskeyService whiskeyService = new WhiskeyService();
 
     public static void main(String... args) {
@@ -27,19 +32,4 @@ public class App {
 
     }
 
-    public SneakerService getSneakerService() {
-        return sneakerService;
-    }
-
-    public void setSneakerService(SneakerService sneakerService) {
-        this.sneakerService = sneakerService;
-    }
-
-    public WhiskeyService getWhiskeyService() {
-        return whiskeyService;
-    }
-
-    public void setWhiskeyService(WhiskeyService whiskeyService) {
-        this.whiskeyService = whiskeyService;
-    }
 }

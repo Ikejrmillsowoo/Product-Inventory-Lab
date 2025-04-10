@@ -10,7 +10,7 @@ public class WhiskeyService {
 
     private List<Whiskey> inventory = new ArrayList<>();
 
-    public Whiskey create(String name, String brand, String size, int qty, float price) {
+    public Whiskey create(String name, String brand, int size, int qty, float price) {
         Whiskey createdWhiskey = new Whiskey(nextId++, name, brand, size, qty, price);
         inventory.add(createdWhiskey);
 

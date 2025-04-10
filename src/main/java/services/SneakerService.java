@@ -49,55 +49,55 @@ public class SneakerService {
     }
 
 
-    public void addToCSV() throws IOException {
-        String csvFile = "/Users/batman/Desktop/Sneaker.csv";
-        FileWriter writer = new FileWriter(csvFile);
-        CSVUtils.writeLine(writer, new ArrayList<String>(Arrays.asList(String.valueOf(nextId))));
+//    public void addToCSV() throws IOException {
+//        String csvFile = "/Users/batman/Desktop/Sneaker.csv";
+//        FileWriter writer = new FileWriter(csvFile);
+//        CSVUtils.writeLine(writer, new ArrayList<String>(Arrays.asList(String.valueOf(nextId))));
+//
+//        for (Sneaker s : inventory) {
+//            List<String> list = new ArrayList<>(); // (3)
+//            list.add(String.valueOf(s.getId()));
+//            list.add(s.getName());
+//            list.add(s.getBrand());
+//            list.add(s.getSport());
+//            list.add(String.valueOf(s.getQty()));
+//            list.add(String.valueOf(s.getPrice()));
+//
+//            CSVUtils.writeLine(writer, list);
+//        }
+//
+//        writer.flush();
+//        writer.close();
+//
+//    }
 
-        for (Sneaker s : inventory) {
-            List<String> list = new ArrayList<>(); // (3)
-            list.add(String.valueOf(s.getId()));
-            list.add(s.getName());
-            list.add(s.getBrand());
-            list.add(s.getSport());
-            list.add(String.valueOf(s.getQty()));
-            list.add(String.valueOf(s.getPrice()));
-
-            CSVUtils.writeLine(writer, list);
-        }
-
-        writer.flush();
-        writer.close();
-
-    }
-
-    public void loadData(){
-        String csvFile = "/Users/batman/Desktop/Sneaker.csv";
-        String line = "";
-        String csvSplitBy = ",";
-
-        try(BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-            nextId = Integer.parseInt(br.readLine());
-
-            while ((line = br.readLine())!= null){
-                // split line with comma
-                String[] beer = line.split(csvSplitBy);
-
-                int id = Integer.parseInt(beer[0]);
-                String name = beer[1];
-                String brand = beer[2];
-                String sport = beer[3];
-                int size = Integer.parseInt(beer[4]);
-                int qty = Integer.parseInt(beer[5]);
-                float price = Float.parseFloat(beer[6]);
-
-                // (5)
-                inventory.add(new Sneaker(id, name, brand, sport, size, qty, price));
-            }
-        }  catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    public void loadData(){
+//        String csvFile = "/Users/batman/Desktop/Sneaker.csv";
+//        String line = "";
+//        String csvSplitBy = ",";
+//
+//        try(BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+//            nextId = Integer.parseInt(br.readLine());
+//
+//            while ((line = br.readLine())!= null){
+//                // split line with comma
+//                String[] beer = line.split(csvSplitBy);
+//
+//                int id = Integer.parseInt(beer[0]);
+//                String name = beer[1];
+//                String brand = beer[2];
+//                String sport = beer[3];
+//                int size = Integer.parseInt(beer[4]);
+//                int qty = Integer.parseInt(beer[5]);
+//                float price = Float.parseFloat(beer[6]);
+//
+//                // (5)
+//                inventory.add(new Sneaker(id, name, brand, sport, size, qty, price));
+//            }
+//        }  catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
 
 }

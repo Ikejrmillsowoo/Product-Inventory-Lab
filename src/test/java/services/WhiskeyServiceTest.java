@@ -11,7 +11,7 @@ public class WhiskeyServiceTest {
         //Given
         String expectedName = "Stan Smith";
         String expectedBrand = "Adidas";
-        String expectedSize = "lg";
+        int expectedSize = 7;
         int expectedQty = 10;
         float expectedPrice = 80.00f;
 
@@ -23,7 +23,7 @@ public class WhiskeyServiceTest {
         int actualId = testWhiskey.getId();
         String actualName = testWhiskey.getName();
         String actualBrand = testWhiskey.getBrand();
-        String actualSize = testWhiskey.getSize();
+        int actualSize = testWhiskey.getSize();
         int actualQty = testWhiskey.getQty();
         float actualPrice = testWhiskey.getPrice();
 
@@ -40,7 +40,7 @@ public class WhiskeyServiceTest {
         //given
         String expectedName = "Air Forces";
         String expectedBrand = "Nike";
-        String expectedSize = "xl";
+        int expectedSize = 7;
         int expectedQty = 8;
         float expectedPrice = 70.00f;
 
@@ -60,8 +60,8 @@ public class WhiskeyServiceTest {
         WhiskeyService whiskeyService = new WhiskeyService();
 
         //when
-        Whiskey testWhiskey = whiskeyService.create("Air Forces", "Nike", "xl", 12, 70.00f);
-        Whiskey testWhiskey2 = whiskeyService.create("Stan Smith", "Adidas", "lg", 12, 80.00f);
+        Whiskey testWhiskey = whiskeyService.create("Air Forces", "Nike", 7, 12, 70.00f);
+        Whiskey testWhiskey2 = whiskeyService.create("Stan Smith", "Adidas", 6, 12, 80.00f);
         int actualNumOfSneakers = 2;
 
 
@@ -74,14 +74,14 @@ public class WhiskeyServiceTest {
         //given
         WhiskeyService whiskeyService = new WhiskeyService();
         //when
-        Whiskey testWhiskey = whiskeyService.create("Air Forces", "Nike", "Tennis", 12, 70.00f);
-        Whiskey testWhiskey2 = whiskeyService.create("Stan Smith", "Adidas", "Tennis", 12, 80.00f);
+        Whiskey testWhiskey = whiskeyService.create("Air Forces", "Nike", 7, 12, 70.00f);
+        Whiskey testWhiskey2 = whiskeyService.create("Stan Smith", "Adidas", 6, 12, 80.00f);
         int idToDelete = testWhiskey.getId();
-        int actualNumOfWhistkey = 1;
+        int actualNumOfWhiskey = 1;
 
 
         //Then
         Assertions.assertTrue(whiskeyService.delete(idToDelete));
-        Assertions.assertEquals(whiskeyService.findAll().length, actualNumOfWhistkey);
+        Assertions.assertEquals(whiskeyService.findAll().length, actualNumOfWhiskey);
     }
 }
